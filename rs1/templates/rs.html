@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Recommendations</title>
+</head>
+<body >
+ <table  style="width:48%; " align="left" class="pure-table pure-table-bordered" >
+      <thead>
+        <tr>
+            <th>Product</th>
+            <th>Product Rating</th>
+            <th>Brand</th>
+        </tr>
+      </thead>
+      <tbody>
+            {% for i in range(0,ds1|length)%}
+      <tr>
+          <td>
+              {{ds1['name'].iloc[i]}}
+          </td>
+          <td>
+            {{ds1.iloc[i].totalreview}}  
+          </td>
+          <td>
+            {{ds1['brand'].iloc[i]}}
+          </td>
+      </tr>
+     {%endfor%}
+      </tbody>
+ </table>
+
+ <table  style="width:48%; " align="right" class="pure-table pure-table-bordered" >
+      <thead>
+        <tr>
+            <th>Product</th>
+            <th>Seller Rating</th>
+            <th>Brand</th>
+            <th>Seller</th>
+        </tr>
+      </thead>
+      <tbody>
+            {% for i in range(0,ds2|length)%}
+      <tr>
+          <td>
+              {{ds2['name'].iloc[i]}}
+          </td>
+          <td>
+            {{ds2.iloc[i].suppliertotalreview}}  
+          </td>
+          <td>
+            {{ds2['brand'].iloc[i]}}
+          </td>
+          <td>
+            {{ds2['suppliername'].iloc[i]}}
+          </td>
+      </tr>
+     {%endfor%}
+      </tbody>
+ </table>
+
+</body>
+</html>

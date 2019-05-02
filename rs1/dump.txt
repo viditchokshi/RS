@@ -1,0 +1,88 @@
+  <tr>
+    <td>
+      <h3>Product</h3>
+    </td>
+    <td>
+      <h3>Brand</h3>
+    </td>
+    <td>
+      <h3>Seller</h3>
+    </td>
+    <td>
+      <h3>Product Rating</h3>
+    </td>
+  </tr>
+
+   <table border="1" style="width: 49%; float: right;">
+  
+  <tr>
+    <td>
+      <h3>Product</h3>
+    </td>
+    <td>
+      <h3>Brand</h3>
+    </td>
+    <td>
+      <h3>Seller</h3>
+    </td>
+    <td>
+      <h3>Seller Rating</h3>
+    </td>
+  </tr>
+
+    {% for i in range(0,ds2|length)%}
+      <tr>
+          <td>
+          {{ds2['name'].iloc[i]}}
+      </td>
+      <td>
+          {{ds2.iloc[i].brand}}
+      </td>
+         <td>
+          {{ds2.iloc[i].suppliername}}
+      </td>
+      <td>
+          {{ds2.iloc[i].suppliertotalreview}}
+      </td>
+      </tr>
+     {%endfor%}
+
+ </table>
+
+border="1" style="width: 90%;" class="pure-table"
+
+  <form action="\search" method="POST">
+    <input type="text" name="sc" value="Search">
+    <input type="submit" name="submit">
+  </form>
+
+  .sort_values('totalreview', ascending = False)
+
+  for productname in subset['name']:
+    hasAllWords = True
+    for word in strr.split(" "):
+        if not word.lower() in productname.lower().split(" "):
+            hasAllWords = False
+    if hasAllWords:
+        print productname
+
+
+
+>>> import pandas as pd
+>>> import numpy as np
+>>> df = pd.DataFrame(columns=['lib', 'qty1', 'qty2'])
+>>> for i in range(5):
+>>>     df.loc[i] = [np.random.randint(-1,1) for n in range(3)]
+>>>
+>>> print(df)
+    lib  qty1  qty2
+0    0     0    -1
+1   -1    -1     1
+2    1    -1     1
+3    0     0     0
+4    1    -1    -1
+
+[5 rows x 3 columns]
+
+Vidit Chokshi
+
